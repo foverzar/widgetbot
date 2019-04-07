@@ -12,5 +12,4 @@ ADD . /app
 
 EXPOSE 3000
 
-ENTRYPOINT ["/bin/bash", "/app/run.sh"]
-CMD ["start"]
+CMD ["/bin/bash", "-c", "/app/build-all.sh"]
