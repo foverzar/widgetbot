@@ -1,9 +1,16 @@
-FROM node:8-alpine
-MAINTAINER Mark Rapson <markrapson.1991@gmail.com>
+FROM node:8
 
-WORKDIR /opt/app
-ADD . /opt/app
+ADD yarn.lock /yarn.lock
+ADD package.json /package.json
 
-RUN npm install -g yarn \
-    yarn build \
-    yarn workspace server start
+ENV NODE_PATH=/node_modules
+ENV PATH=$PATH:/node_modules/.bin
+RUN yarn
+
+WORKDIR /app
+ADD . /app
+
+EXPOSE 3000
+
+ENTRYPOINT ["/bin/bash", "/app/run.sh"]
+CMD ["start"]
