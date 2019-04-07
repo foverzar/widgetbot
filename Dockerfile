@@ -7,4 +7,4 @@ ADD . /opt/app
 RUN npm install -g yarn \
     yarn build
 
-CMD ["yarn", "workspace server start"]
+CMD ["yarn workspace server start"]
