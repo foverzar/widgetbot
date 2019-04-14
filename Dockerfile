@@ -13,4 +13,5 @@ ADD . /app
 EXPOSE 3000
 
 RUN yarn run build
-RUN yarn run start
+
+CMD ["sh", "-c", "yarn run start"]
