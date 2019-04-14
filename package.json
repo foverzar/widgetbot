@@ -9,6 +9,7 @@
     "pull": "git stash && git pull && yarn && yarn build",
     "precommit": "pretty-quick --staged",
     "test": "yarn build"
+    "run": "yarn workspace server start"
   },
   "dependencies": {
     "react": "~16.8.1",
