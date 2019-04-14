@@ -12,4 +12,5 @@ ADD . /app
 
 EXPOSE 3000
 
-CMD ["/bin/bash", "-c", "/app/build-all.sh"]
+RUN yarn run build
+RUN yarn run start
